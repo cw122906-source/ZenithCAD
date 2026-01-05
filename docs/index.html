@@ -11,12 +11,16 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         h1 {
             color: #4a9eff;
             text-align: center;
+        }
+        h2 {
+            color: #4a9eff;
+            margin-top: 0;
         }
         .logo {
             display: block;
@@ -43,17 +47,13 @@
         .download-btn:hover {
             background: #3a8eef;
         }
-        .features {
+        .section {
             background: #252540;
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
         }
-        .features h2 {
-            color: #4a9eff;
-            margin-top: 0;
-        }
-        .features ul {
+        .section ul {
             columns: 2;
         }
         .size {
@@ -61,11 +61,43 @@
             color: #4a4;
             font-size: 14px;
         }
+        .screenshots {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .screenshots img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .screenshots img:hover {
+            transform: scale(1.02);
+        }
+        .video-container {
+            margin: 15px 0;
+        }
+        .video-container video {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
         footer {
             text-align: center;
             margin-top: 50px;
             color: #666;
             font-size: 12px;
+        }
+        footer a {
+            color: #666;
+            margin: 0 10px;
+        }
+        @media (max-width: 600px) {
+            .screenshots { grid-template-columns: 1fr; }
+            .section ul { columns: 1; }
         }
     </style>
 </head>
@@ -78,7 +110,24 @@
         <a href="ZenithCAD_Setup_1.0.0.exe" class="download-btn">Download v1.0.0</a>
         <p class="size">Only 3MB - Windows 10/11</p>
         
-        <div class="features">
+        <div class="section">
+            <h2>Screenshots</h2>
+            <div class="screenshots">
+                <img src="screenshot.png" alt="ZenithCAD Editor" onclick="window.open(this.src)">
+                <img src="Screenshot1.png" alt="ZenithCAD Animation" onclick="window.open(this.src)">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Animation Preview</h2>
+            <div class="video-container">
+                <video controls loop muted autoplay>
+                    <source src="animated.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        
+        <div class="section">
             <h2>Features</h2>
             <ul>
                 <li>Scene editor with hierarchy</li>
@@ -94,7 +143,7 @@
             </ul>
         </div>
         
-        <div class="features">
+        <div class="section">
             <h2>Controls</h2>
             <ul>
                 <li>Middle mouse - Orbit</li>
@@ -107,7 +156,7 @@
         </div>
         
         <footer>
-            &copy; 2025 SuplixSoftware
+            &copy; 2025 SuplixSoftware | <a href="tos.html">Terms of Service</a>
         </footer>
     </div>
 </body>
